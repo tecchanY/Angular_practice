@@ -1,0 +1,26 @@
+<!-- <p>
+  heroines works!
+  {{ heroine }}
+</p> -->
+
+<!-- <h2>{{ heroine.name }}の情報</h2> -->
+<!-- <h2>{{ heroines[0].name }}の情報</h2> -->
+<h2>{{ selectedHeroine.name }}の情報</h2>
+<!-- <div><span>番号：</span>{{ heroine.id }}</div> -->
+<!-- <div><span>番号：</span>{{ heroines[0].id }}</div> -->
+<div><span>番号：</span>{{ selectedHeroine.id }}</div>
+<div>
+  <!-- <span>名前：</span>{{ heroine.name }} -->
+  <label
+    >名前：
+    <!-- <input [(ngModel)]="heroines[0].name" placeholder="名前" /> -->
+    <input [(ngModel)]="selectedHeroine.name" placeholder="名前" />
+  </label>
+</div>
+
+<ul class="heroines">
+  <!-- ng以下を追加 -->
+  <li *ngFor="let heroine of heroines" (click)="onSelect(heroine)">
+    <span class="badge">{{ heroine.id }}</span> {{ heroine.name }}
+  </li>
+</ul>
