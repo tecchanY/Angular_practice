@@ -6,9 +6,10 @@ import { AppComponent } from "./app.component";
 import { HeroinesComponent } from "./heroines/heroines.component";
 
 import { FormsModule } from "@angular/forms";
+import { HeroineDetailComponent } from './heroine-detail/heroine-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, HeroinesComponent],
+  declarations: [AppComponent, HeroinesComponent, HeroineDetailComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
