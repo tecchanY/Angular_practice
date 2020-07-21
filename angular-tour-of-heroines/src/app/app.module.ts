@@ -8,9 +8,10 @@ import { HeroinesComponent } from "./heroines/heroines.component";
 import { FormsModule } from "@angular/forms";
 import { HeroineDetailComponent } from './heroine-detail/heroine-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, HeroinesComponent, HeroineDetailComponent, MessagesComponent],
+  declarations: [AppComponent, HeroinesComponent, HeroineDetailComponent, MessagesComponent, DashboardComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
