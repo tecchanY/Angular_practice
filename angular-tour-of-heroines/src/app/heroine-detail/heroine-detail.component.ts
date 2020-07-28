@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Heroine } from "../Heroine";
+import { ActivatedRoute } from "@angular/router";
+import { HeroineService } from "../heroine.service";
+import { Location } from "@angular/common";
 
 @Component({
   selector: "app-heroine-detail",
@@ -7,9 +10,27 @@ import { Heroine } from "../Heroine";
   styleUrls: ["./heroine-detail.component.scss"],
 })
 export class HeroineDetailComponent implements OnInit {
-  @Input() heroine: Heroine;
+  @Input()
+  heroine: Heroine;
 
-  constructor() {}
+  constructor(
+    private route: ActivatedRoute,
+    private heroineService: HeroineService,
+    private location: Location
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getHeroine();
+  }
+
+  getHeroine(): void {
+    const id = +this.route.snapshot.paramMap.get("id");
+    this.heroineService
+      .getHeroine(id)
+      .subscribe((heroine) => (this.heroine = heroine));
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
 }

@@ -14,8 +14,12 @@ export class HeroineService {
   //   return HEROINES;
   // }
   getHeroines(): Observable<Heroine[]> {
-    this.messageService.add("HeroineService: データを取得");
-    console.log(this.messageService);
+    this.messageService.add("HeroineService:データを取得");
     return of(HEROINES);
+  }
+  getHeroine(id: number): Observable<Heroine> {
+    this.messageService.add(`HeroineService: 番号${id}を取得`);
+    console.log(this.messageService); //確認用
+    return of(HEROINES.find((heroine) => heroine.id === id));
   }
 }

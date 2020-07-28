@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   // constructor() { }
   constructor(private heroineService: HeroineService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getHeroines();
   }
 

@@ -2,15 +2,16 @@
   heroines works!
   {{ heroine }}
 </p> -->
-
+<h2>ヒロインリスト</h2>
 <ul class="heroines">
   <!-- ng以下を追加 -->
-  <li
-    *ngFor="let heroine of heroines"
-    [class.selected]="heroine === selectedHeroine"
-    (click)="onSelect(heroine)"
-  >
-    <span class="badge">{{ heroine.id }}</span> {{ heroine.name }}
+  <li *ngFor="let heroine of heroines">
+    <!-- [class.selected]="heroine === selectedHeroine"
+    (click)="onSelect(heroine)" -->
+
+    <a routerLink="/detail/{{ heroine.id }}">
+      <span class="badge">{{ heroine.id }}</span> {{ heroine.name }}
+    </a>
   </li>
 </ul>
 
@@ -30,4 +31,4 @@
 <!-- </label> -->
 <!-- </div> -->
 <!-- </div> -->
-<app-heroine-detail [heroine]="selectedHeroine"></app-heroine-detail>
+<!-- <app-heroine-detail [heroine]="selectedHeroine"></app-heroine-detail> -->
